@@ -1,2 +1,3 @@
 import Appbar from "./Appbar/Appbar";
-export { Appbar }
+import CardsContainer from "./CardsContainer/CardsContainer";
+export { Appbar, CardsContainer }

@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Typography, CardActions, CardContent, Button, makeStyles } from '@material-ui/core'
+
 const useStyles = makeStyles({
     root: {
         marginTop: '1rem'
     },
     title: {},
-    pos: {}
-})
+    pos: {},
+    button: {
+        color: cold => cold === true ? "green" : "red"
+    }
+}
+)
 const CardItem = (): JSX.Element => {
-    const classes = useStyles()
+    const [cold] = useState({ cold: false })
+    const classes = useStyles(cold)
     return (
         <Card className={classes.root}>
             <CardContent>
@@ -28,7 +34,7 @@ const CardItem = (): JSX.Element => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button size="small" className={classes.button}>Learn More</Button>
             </CardActions>
         </Card>
     )
